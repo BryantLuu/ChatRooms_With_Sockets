@@ -3,6 +3,8 @@ var express = require("express");
 var path = require("path");
 // create the express app
 var app = express();
+
+app.set('port', (process.env.PORT || 5000));
 // static content 
 app.use(express.static(__dirname, "./static"));
 // setting up ejs and our views folder
@@ -13,11 +15,11 @@ app.get('/', function (req, res) {
  res.render("index");
 })
 // tell the express app to listen on port 8000
-var server = app.listen(8000, function() {
- console.log("listening on port 8000");
-})
+var server = app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
 
-var io = require('socket.io').listen(server);
+var io = require('socket.io').listen();
 
 var user_list = {}
 io.sockets.on('connection', function (socket){
