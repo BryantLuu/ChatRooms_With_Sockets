@@ -30,6 +30,7 @@
       $('#messages').html('');
       socket.emit('pick_room',$('#room_select').val());
       $('h1').html("Room: " + $('#room_select').val());
+      $('#room_select').val('');
       return false;
     })
 
