@@ -1,0 +1,21 @@
+#messages{
+  overflow-y: scroll;
+  border:1px solid silver;
+  height:400px;
+}
+
+.logged_in_users{
+  border:1px solid silver;
+  
+}
+
+.no-padding{
+  padding:0px;
+}
+.margin-top{
+  margin-top:10px;
+}
+
+input{
+  width:100%;
+}
