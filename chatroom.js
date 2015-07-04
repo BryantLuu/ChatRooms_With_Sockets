@@ -19,7 +19,7 @@ var server = app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
 
-var io = require('socket.io').listen();
+var io = require('socket.io').listen(server);
 
 var user_list = {}
 io.sockets.on('connection', function (socket){
